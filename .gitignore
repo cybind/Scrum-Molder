@@ -50,3 +50,6 @@ packages/
 
 #License files
 *.lic
+
+#Lib folder
+[Ll]ib/
