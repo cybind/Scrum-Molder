@@ -49,4 +49,4 @@ _ReSharper*/
 packages/
 
 #License files
-.lic
+*.lic
