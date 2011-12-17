@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Daily Scrum";
+}
+
+@section HeaderContent {
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/highslide/highslide-with-html.js")"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/highslide/highslide.js")"></script>*@
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Scripts/highslide/highslide.css")" />
+
+    <script type="text/javascript">
+
+        hs.graphicsDir = '@Url.Content("~/Scripts/highslide/graphics/")';
+        hs.outlineType = 'rounded-white';
+        hs.wrapperClassName = 'draggable-header';
+        hs.allowMultipleInstances = false;
+        hs.align = 'center';
+        
+        $(document).ready(function () {
+
+            $('.clients').each(function () {
+                var projectList = $(this).parent().parent().find(".projects");
+                var selectedProjectId = $(projectList).val();
+                $(projectList).attr("disabled", "disabled");
+                if ($(this).val() != "") {
+                    var url = '@Url.Action("Projects", "Home")';
+                    $.getJSON(url, { clientId: $(this).val() }, function (data) {
+                        $(projectList).removeAttr("disabled");
+                        $(projectList).empty();
+                        $(projectList).append('<option value=""> -- select project -- </option>');
+                        $.each(data, function (key, val) {
+                            if (selectedProjectId == val.Id)
+                                $(projectList).append('<option value="' + val.Id + '" selected="selected">' + val.Name + '</option>');
+                            else
+                                $(projectList).append('<option value="' + val.Id + '">' + val.Name + '</option>');
+                        });
+
+                    });
+                }
+            });
+
+            $('.clients').live("change", function () {
+                var projectList = $(this).parent().parent().find(".projects");
+                $(projectList).attr("disabled", "disabled");
+
+                if ($(this).val() != "") {
+                    var url = '@Url.Action("Projects", "Home")';
+                    $.getJSON(url, { clientId: $(this).val() }, function (data) {
+                        $(projectList).removeAttr("disabled");
+                        $(projectList).empty();
+                        $(projectList).append('<option value=""> -- select project -- </option>');
+                        $.each(data, function (key, val) {
+                            $(projectList).append('<option value="' + val.Id + '">' + val.Name + '</option>');
+                        });
+
+                    });
+                }
+            });
+
+            $('.projects').live("change", function () {
+                if ($(this).val() != "") {
+                    var url = '@Url.Action("ProjectBugs", "Bug")';
+                    $.get(url, { projectId: $(this).val() }, function (data) {
+                        $("#bugsPlaceHolder").html(data);
+                    });
+                }
+
+            });
+
+            $("#addNewBug").click(function () {
+
+                var url = $(this).attr("href");
+
+                $(this).attr('href', url + "?projectId=" + $(".projects").val());
+
+                return hs.htmlExpand(this, { objectType: 'ajax', height: '580', width: '470', align: 'center' });
+
+
+            });
+
+
+            $(".edit-bug").live("click",function () {
+
+                var url = $(this).attr("href");
+                var bugId = $(this).find(".bug-id").val();
+                
+                $(this).attr('href', url + "?projectId=" + $(".projects").val() + "&bugId=" + bugId);
+
+                return hs.htmlExpand(this, { objectType: 'ajax', height: '580', width: '470', align: 'center' });
+
+
+            });
+
+            $("#saveBug").live("click", function () {
+                $("#bugPopup form").submit();
+            });
+
+        });
+    </script>
+
+}
+
+<div class="left"><h2>Bugs List</h2></div>
+<div class="clear"></div>
+
+<div>
+    <div class="left">
+        <div class="editor-label">
+            Client
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Clients", ViewBag.Clients as List<SelectListItem>, " -- select client -- ", new { @class = "clients" })
+            
+        </div>
+        <div class="editor-label">
+            Project
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Projects", ViewBag.Projects as List<SelectListItem>, " -- select project -- ", new { @class = "projects", disabled = "disabled" })
+        </div>
+         
+        <a class="button green" href="@Url.Action("EditBug", "Bug")" id="addNewBug" title="Add Bug"><span>Add New</span></a>
+
+    </div>
+    <div class="clear"></div>
+    <div id="bugsPlaceHolder"></div>
+
+</div>

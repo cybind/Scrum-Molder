@@ -1,0 +1,72 @@
+﻿@using eGo.ScrumMolder.Web.Infrastructure
+@using eGo.ScrumMolder.Web.Models
+@model DailyProjectScrum
+
+<li style="padding-bottom:15px">
+    <hr class="dotted-line" />
+    @using (Html.BeginCollectionItem("DailyProjectScrums"))
+    {
+        
+        @Html.HiddenFor(m => m.Id)
+
+        <div class="left">
+            <div class="editor-label">
+                @Html.LabelFor(m => m.ClientId)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.ClientId, ViewBag.Clients as List<SelectListItem>, " -- select client -- ", new { @class = "clients" })
+                @Html.ValidationMessageFor(model => model.ClientId)
+            </div>
+    
+            <div class="clear"></div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(m => m.ProjectId)
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(m => m.ProjectId, ViewBag.Projects as List<SelectListItem>, " -- select project -- ", new { @class = "projects", disabled = "disabled" })
+                @Html.ValidationMessageFor(model => model.ProjectId)
+            </div>
+        </div>
+        
+        <div class="right">
+            <a href="#" id="deleteNewDailyScrumButton" class="delete" title="Delete new item" onclick="$(this).parent().parent().remove();">Delete daily scrum item</a>
+        </div>
+        
+        <div class="clear"></div>
+        <br />
+        
+        <div class="left">
+            <strong>@Html.LabelFor(model => model.WhatDoneLastTime)<span>:</span></strong><br />
+            @Html.EditorFor(model => model.WhatDoneLastTime)<br />
+            
+        </div>
+
+        <div class="left">
+            <strong>@Html.LabelFor(model => model.SpentTimeStepper)<span>:</span></strong>
+            <div class="clear"></div>
+            <div class="left">
+                @Html.EditorFor(model => model.SpentTimeStepper)
+            </div>
+            
+            @Html.ValidationMessageFor(model => model.SpentTimeStepper)
+        </div>
+        
+        <div class="clear"></div>
+        <br />
+        <strong>@Html.LabelFor(model => model.WhatProblems)<span>:</span></strong><br />
+        @Html.EditorFor(model => model.WhatProblems)<br />
+        @Html.ValidationMessageFor(model => model.WhatProblems)
+
+        <div class="clear"></div>
+        <br />
+        <strong>@Html.LabelFor(model => model.WhatToDoNext)<span>:</span></strong><br />
+        @Html.EditorFor(model => model.WhatToDoNext)<br />
+        @Html.ValidationMessageFor(model => model.WhatToDoNext)
+
+        <div class="clear"></div>    
+    }
+    <br />
+    <div class="left">* All fields are required</div>
+    <div class="clear"></div>    
+</li>

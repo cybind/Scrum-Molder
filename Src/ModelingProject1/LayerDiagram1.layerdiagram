@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="0e6c31d8-061f-4167-b8f8-1044c20e256f" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="579bb4df-48c4-4832-a535-6237f2a4adc0" name="Layer1">
+      <childLayers>
+        <layer Id="5dd89477-6b1c-41a6-9dd5-ebbbcadd03af" name="Cybind.Layer2" />
+        <layer Id="c750da17-1299-4391-bbc1-c93101df4852" name="Cybind.Layer1">
+          <dependencyToLayers>
+            <dependencyFromLayerToLayer Id="a99b0ef2-0f09-44f8-89af-28e7457a78a0" direction="Forward">
+              <layerMoniker Id="5dd89477-6b1c-41a6-9dd5-ebbbcadd03af" />
+            </dependencyFromLayerToLayer>
+          </dependencyToLayers>
+        </layer>
+      </childLayers>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,724 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5AE766AD-50BA-4BF8-ABB1-2DF7647EF70C}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>eGo.ScrumMolder.Web</RootNamespace>
+    <AssemblyName>eGo.ScrumMolder.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EmitMapper">
+      <HintPath>..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentEmail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MvcMiniProfiler, Version=1.6.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\MiniProfiler.1.6\lib\MvcMiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.2.2.2.0\lib\net40-Full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.2.1\lib\.NetFramework 4.0\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\RazorEngine.2.1\lib\.NetFramework 4.0\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.4.1\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\NinjectMVC3.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BugController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\BugHelper.cs" />
+    <Compile Include="Infrastructure\CollectionEditingHtmlExtensions.cs" />
+    <Compile Include="Infrastructure\FormResponseData.cs" />
+    <Compile Include="Infrastructure\JsonHtmlExtensions.cs" />
+    <Compile Include="Ioc.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ISession.cs" />
+    <Compile Include="MiscHelpers.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Bug.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\CustomMembershipProvider.cs" />
+    <Compile Include="Models\DailyProjectScrum.cs" />
+    <Compile Include="Models\DailyScrum.cs" />
+    <Compile Include="Models\EditBugModel.cs" />
+    <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\TimeStepper.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\EffortReport.cs" />
+    <Compile Include="ProfilingActionFilter.cs" />
+    <Compile Include="ProfilingViewEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository.cs" />
+    <Compile Include="RequiresAuthenticationAttribute.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SessionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\6.jpg" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\custom\icons\48\1.png" />
+    <Content Include="Content\themes\custom\icons\48\10.png" />
+    <Content Include="Content\themes\custom\icons\48\100.png" />
+    <Content Include="Content\themes\custom\icons\48\101.png" />
+    <Content Include="Content\themes\custom\icons\48\102.png" />
+    <Content Include="Content\themes\custom\icons\48\103.png" />
+    <Content Include="Content\themes\custom\icons\48\104.png" />
+    <Content Include="Content\themes\custom\icons\48\105.png" />
+    <Content Include="Content\themes\custom\icons\48\106.png" />
+    <Content Include="Content\themes\custom\icons\48\107.png" />
+    <Content Include="Content\themes\custom\icons\48\108.png" />
+    <Content Include="Content\themes\custom\icons\48\109.png" />
+    <Content Include="Content\themes\custom\icons\48\11.png" />
+    <Content Include="Content\themes\custom\icons\48\110.png" />
+    <Content Include="Content\themes\custom\icons\48\111.png" />
+    <Content Include="Content\themes\custom\icons\48\112.png" />
+    <Content Include="Content\themes\custom\icons\48\113.png" />
+    <Content Include="Content\themes\custom\icons\48\114.png" />
+    <Content Include="Content\themes\custom\icons\48\115.png" />
+    <Content Include="Content\themes\custom\icons\48\116.png" />
+    <Content Include="Content\themes\custom\icons\48\117.png" />
+    <Content Include="Content\themes\custom\icons\48\118.png" />
+    <Content Include="Content\themes\custom\icons\48\119.png" />
+    <Content Include="Content\themes\custom\icons\48\12.png" />
+    <Content Include="Content\themes\custom\icons\48\120.png" />
+    <Content Include="Content\themes\custom\icons\48\121.png" />
+    <Content Include="Content\themes\custom\icons\48\122.png" />
+    <Content Include="Content\themes\custom\icons\48\123.png" />
+    <Content Include="Content\themes\custom\icons\48\124.png" />
+    <Content Include="Content\themes\custom\icons\48\125.png" />
+    <Content Include="Content\themes\custom\icons\48\126.png" />
+    <Content Include="Content\themes\custom\icons\48\127.png" />
+    <Content Include="Content\themes\custom\icons\48\128.png" />
+    <Content Include="Content\themes\custom\icons\48\129.png" />
+    <Content Include="Content\themes\custom\icons\48\13.png" />
+    <Content Include="Content\themes\custom\icons\48\130.png" />
+    <Content Include="Content\themes\custom\icons\48\131.png" />
+    <Content Include="Content\themes\custom\icons\48\14.png" />
+    <Content Include="Content\themes\custom\icons\48\15.png" />
+    <Content Include="Content\themes\custom\icons\48\16.png" />
+    <Content Include="Content\themes\custom\icons\48\17.png" />
+    <Content Include="Content\themes\custom\icons\48\18.png" />
+    <Content Include="Content\themes\custom\icons\48\19.png" />
+    <Content Include="Content\themes\custom\icons\48\2.png" />
+    <Content Include="Content\themes\custom\icons\48\20.png" />
+    <Content Include="Content\themes\custom\icons\48\21.png" />
+    <Content Include="Content\themes\custom\icons\48\22.png" />
+    <Content Include="Content\themes\custom\icons\48\23.png" />
+    <Content Include="Content\themes\custom\icons\48\24.png" />
+    <Content Include="Content\themes\custom\icons\48\25.png" />
+    <Content Include="Content\themes\custom\icons\48\26.png" />
+    <Content Include="Content\themes\custom\icons\48\27.png" />
+    <Content Include="Content\themes\custom\icons\48\28.png" />
+    <Content Include="Content\themes\custom\icons\48\29.png" />
+    <Content Include="Content\themes\custom\icons\48\3.png" />
+    <Content Include="Content\themes\custom\icons\48\30.png" />
+    <Content Include="Content\themes\custom\icons\48\31.png" />
+    <Content Include="Content\themes\custom\icons\48\32.png" />
+    <Content Include="Content\themes\custom\icons\48\33.png" />
+    <Content Include="Content\themes\custom\icons\48\34.png" />
+    <Content Include="Content\themes\custom\icons\48\35.png" />
+    <Content Include="Content\themes\custom\icons\48\36.png" />
+    <Content Include="Content\themes\custom\icons\48\37.png" />
+    <Content Include="Content\themes\custom\icons\48\38.png" />
+    <Content Include="Content\themes\custom\icons\48\39.png" />
+    <Content Include="Content\themes\custom\icons\48\4.png" />
+    <Content Include="Content\themes\custom\icons\48\40.png" />
+    <Content Include="Content\themes\custom\icons\48\41.png" />
+    <Content Include="Content\themes\custom\icons\48\42.png" />
+    <Content Include="Content\themes\custom\icons\48\43.png" />
+    <Content Include="Content\themes\custom\icons\48\44.png" />
+    <Content Include="Content\themes\custom\icons\48\45.png" />
+    <Content Include="Content\themes\custom\icons\48\46.png" />
+    <Content Include="Content\themes\custom\icons\48\47.png" />
+    <Content Include="Content\themes\custom\icons\48\48.png" />
+    <Content Include="Content\themes\custom\icons\48\49.png" />
+    <Content Include="Content\themes\custom\icons\48\5.png" />
+    <Content Include="Content\themes\custom\icons\48\50.png" />
+    <Content Include="Content\themes\custom\icons\48\51.png" />
+    <Content Include="Content\themes\custom\icons\48\52.png" />
+    <Content Include="Content\themes\custom\icons\48\53.png" />
+    <Content Include="Content\themes\custom\icons\48\54.png" />
+    <Content Include="Content\themes\custom\icons\48\55.png" />
+    <Content Include="Content\themes\custom\icons\48\56.png" />
+    <Content Include="Content\themes\custom\icons\48\57.png" />
+    <Content Include="Content\themes\custom\icons\48\58.png" />
+    <Content Include="Content\themes\custom\icons\48\59.png" />
+    <Content Include="Content\themes\custom\icons\48\6.png" />
+    <Content Include="Content\themes\custom\icons\48\60.png" />
+    <Content Include="Content\themes\custom\icons\48\61.png" />
+    <Content Include="Content\themes\custom\icons\48\62.png" />
+    <Content Include="Content\themes\custom\icons\48\63.png" />
+    <Content Include="Content\themes\custom\icons\48\64.png" />
+    <Content Include="Content\themes\custom\icons\48\65.png" />
+    <Content Include="Content\themes\custom\icons\48\66.png" />
+    <Content Include="Content\themes\custom\icons\48\67.png" />
+    <Content Include="Content\themes\custom\icons\48\68.png" />
+    <Content Include="Content\themes\custom\icons\48\69.png" />
+    <Content Include="Content\themes\custom\icons\48\7.png" />
+    <Content Include="Content\themes\custom\icons\48\70.png" />
+    <Content Include="Content\themes\custom\icons\48\71.png" />
+    <Content Include="Content\themes\custom\icons\48\72.png" />
+    <Content Include="Content\themes\custom\icons\48\73.png" />
+    <Content Include="Content\themes\custom\icons\48\74.png" />
+    <Content Include="Content\themes\custom\icons\48\75.png" />
+    <Content Include="Content\themes\custom\icons\48\76.png" />
+    <Content Include="Content\themes\custom\icons\48\77.png" />
+    <Content Include="Content\themes\custom\icons\48\78.png" />
+    <Content Include="Content\themes\custom\icons\48\79.png" />
+    <Content Include="Content\themes\custom\icons\48\8.png" />
+    <Content Include="Content\themes\custom\icons\48\80.png" />
+    <Content Include="Content\themes\custom\icons\48\81.png" />
+    <Content Include="Content\themes\custom\icons\48\82.png" />
+    <Content Include="Content\themes\custom\icons\48\83.png" />
+    <Content Include="Content\themes\custom\icons\48\84.png" />
+    <Content Include="Content\themes\custom\icons\48\85.png" />
+    <Content Include="Content\themes\custom\icons\48\86.png" />
+    <Content Include="Content\themes\custom\icons\48\87.png" />
+    <Content Include="Content\themes\custom\icons\48\88.png" />
+    <Content Include="Content\themes\custom\icons\48\89.png" />
+    <Content Include="Content\themes\custom\icons\48\9.png" />
+    <Content Include="Content\themes\custom\icons\48\90.png" />
+    <Content Include="Content\themes\custom\icons\48\91.png" />
+    <Content Include="Content\themes\custom\icons\48\92.png" />
+    <Content Include="Content\themes\custom\icons\48\93.png" />
+    <Content Include="Content\themes\custom\icons\48\94.png" />
+    <Content Include="Content\themes\custom\icons\48\95.png" />
+    <Content Include="Content\themes\custom\icons\48\96.png" />
+    <Content Include="Content\themes\custom\icons\48\97.png" />
+    <Content Include="Content\themes\custom\icons\48\98.png" />
+    <Content Include="Content\themes\custom\icons\48\99.png" />
+    <Content Include="Content\themes\custom\icons\48\accept.png" />
+    <Content Include="Content\themes\custom\icons\48\accept_page.png" />
+    <Content Include="Content\themes\custom\icons\48\add.png" />
+    <Content Include="Content\themes\custom\icons\48\add_page.png" />
+    <Content Include="Content\themes\custom\icons\48\add_to_folder.png" />
+    <Content Include="Content\themes\custom\icons\48\attachment.png" />
+    <Content Include="Content\themes\custom\icons\48\back.png" />
+    <Content Include="Content\themes\custom\icons\48\block.png" />
+    <Content Include="Content\themes\custom\icons\48\calendar.png" />
+    <Content Include="Content\themes\custom\icons\48\calendar_empty.png" />
+    <Content Include="Content\themes\custom\icons\48\chart.png" />
+    <Content Include="Content\themes\custom\icons\48\chart_pie.png" />
+    <Content Include="Content\themes\custom\icons\48\clock.png" />
+    <Content Include="Content\themes\custom\icons\48\comment.png" />
+    <Content Include="Content\themes\custom\icons\48\comments.png" />
+    <Content Include="Content\themes\custom\icons\48\delete.png" />
+    <Content Include="Content\themes\custom\icons\48\delete_folder.png" />
+    <Content Include="Content\themes\custom\icons\48\delete_page.png" />
+    <Content Include="Content\themes\custom\icons\48\download.png" />
+    <Content Include="Content\themes\custom\icons\48\favorite.png" />
+    <Content Include="Content\themes\custom\icons\48\folder.png" />
+    <Content Include="Content\themes\custom\icons\48\folder_accept.png" />
+    <Content Include="Content\themes\custom\icons\48\folder_full.png" />
+    <Content Include="Content\themes\custom\icons\48\full_page.png" />
+    <Content Include="Content\themes\custom\icons\48\heart.png" />
+    <Content Include="Content\themes\custom\icons\48\help.png" />
+    <Content Include="Content\themes\custom\icons\48\info.png" />
+    <Content Include="Content\themes\custom\icons\48\lock.png" />
+    <Content Include="Content\themes\custom\icons\48\mail.png" />
+    <Content Include="Content\themes\custom\icons\48\mail_lock.png" />
+    <Content Include="Content\themes\custom\icons\48\mail_receive.png" />
+    <Content Include="Content\themes\custom\icons\48\mail_search.png" />
+    <Content Include="Content\themes\custom\icons\48\mail_send.png" />
+    <Content Include="Content\themes\custom\icons\48\new_page.png" />
+    <Content Include="Content\themes\custom\icons\48\next.png" />
+    <Content Include="Content\themes\custom\icons\48\page_process.png" />
+    <Content Include="Content\themes\custom\icons\48\process.png" />
+    <Content Include="Content\themes\custom\icons\48\promotion.png" />
+    <Content Include="Content\themes\custom\icons\48\protection.png" />
+    <Content Include="Content\themes\custom\icons\48\refresh.png" />
+    <Content Include="Content\themes\custom\icons\48\rss.png" />
+    <Content Include="Content\themes\custom\icons\48\search.png" />
+    <Content Include="Content\themes\custom\icons\48\search_page.png" />
+    <Content Include="Content\themes\custom\icons\48\tag_blue.png" />
+    <Content Include="Content\themes\custom\icons\48\tag_green.png" />
+    <Content Include="Content\themes\custom\icons\48\text_page.png" />
+    <Content Include="Content\themes\custom\icons\48\unlock.png" />
+    <Content Include="Content\themes\custom\icons\48\user.png" />
+    <Content Include="Content\themes\custom\icons\48\users.png" />
+    <Content Include="Content\themes\custom\icons\48\warning.png" />
+    <Content Include="Content\themes\custom\icons\64\1.png" />
+    <Content Include="Content\themes\custom\icons\64\10.png" />
+    <Content Include="Content\themes\custom\icons\64\100.png" />
+    <Content Include="Content\themes\custom\icons\64\101.png" />
+    <Content Include="Content\themes\custom\icons\64\102.png" />
+    <Content Include="Content\themes\custom\icons\64\103.png" />
+    <Content Include="Content\themes\custom\icons\64\104.png" />
+    <Content Include="Content\themes\custom\icons\64\105.png" />
+    <Content Include="Content\themes\custom\icons\64\106.png" />
+    <Content Include="Content\themes\custom\icons\64\107.png" />
+    <Content Include="Content\themes\custom\icons\64\108.png" />
+    <Content Include="Content\themes\custom\icons\64\109.png" />
+    <Content Include="Content\themes\custom\icons\64\11.png" />
+    <Content Include="Content\themes\custom\icons\64\110.png" />
+    <Content Include="Content\themes\custom\icons\64\111.png" />
+    <Content Include="Content\themes\custom\icons\64\112.png" />
+    <Content Include="Content\themes\custom\icons\64\113.png" />
+    <Content Include="Content\themes\custom\icons\64\114.png" />
+    <Content Include="Content\themes\custom\icons\64\115.png" />
+    <Content Include="Content\themes\custom\icons\64\116.png" />
+    <Content Include="Content\themes\custom\icons\64\117.png" />
+    <Content Include="Content\themes\custom\icons\64\118.png" />
+    <Content Include="Content\themes\custom\icons\64\119.png" />
+    <Content Include="Content\themes\custom\icons\64\12.png" />
+    <Content Include="Content\themes\custom\icons\64\120.png" />
+    <Content Include="Content\themes\custom\icons\64\121.png" />
+    <Content Include="Content\themes\custom\icons\64\122.png" />
+    <Content Include="Content\themes\custom\icons\64\123.png" />
+    <Content Include="Content\themes\custom\icons\64\124.png" />
+    <Content Include="Content\themes\custom\icons\64\125.png" />
+    <Content Include="Content\themes\custom\icons\64\126.png" />
+    <Content Include="Content\themes\custom\icons\64\127.png" />
+    <Content Include="Content\themes\custom\icons\64\128.png" />
+    <Content Include="Content\themes\custom\icons\64\129.png" />
+    <Content Include="Content\themes\custom\icons\64\13.png" />
+    <Content Include="Content\themes\custom\icons\64\130.png" />
+    <Content Include="Content\themes\custom\icons\64\131.png" />
+    <Content Include="Content\themes\custom\icons\64\14.png" />
+    <Content Include="Content\themes\custom\icons\64\15.png" />
+    <Content Include="Content\themes\custom\icons\64\16.png" />
+    <Content Include="Content\themes\custom\icons\64\17.png" />
+    <Content Include="Content\themes\custom\icons\64\18.png" />
+    <Content Include="Content\themes\custom\icons\64\19.png" />
+    <Content Include="Content\themes\custom\icons\64\2.png" />
+    <Content Include="Content\themes\custom\icons\64\20.png" />
+    <Content Include="Content\themes\custom\icons\64\21.png" />
+    <Content Include="Content\themes\custom\icons\64\22.png" />
+    <Content Include="Content\themes\custom\icons\64\23.png" />
+    <Content Include="Content\themes\custom\icons\64\24.png" />
+    <Content Include="Content\themes\custom\icons\64\25.png" />
+    <Content Include="Content\themes\custom\icons\64\26.png" />
+    <Content Include="Content\themes\custom\icons\64\27.png" />
+    <Content Include="Content\themes\custom\icons\64\28.png" />
+    <Content Include="Content\themes\custom\icons\64\29.png" />
+    <Content Include="Content\themes\custom\icons\64\3.png" />
+    <Content Include="Content\themes\custom\icons\64\30.png" />
+    <Content Include="Content\themes\custom\icons\64\31.png" />
+    <Content Include="Content\themes\custom\icons\64\32.png" />
+    <Content Include="Content\themes\custom\icons\64\33.png" />
+    <Content Include="Content\themes\custom\icons\64\34.png" />
+    <Content Include="Content\themes\custom\icons\64\35.png" />
+    <Content Include="Content\themes\custom\icons\64\36.png" />
+    <Content Include="Content\themes\custom\icons\64\37.png" />
+    <Content Include="Content\themes\custom\icons\64\38.png" />
+    <Content Include="Content\themes\custom\icons\64\39.png" />
+    <Content Include="Content\themes\custom\icons\64\4.png" />
+    <Content Include="Content\themes\custom\icons\64\40.png" />
+    <Content Include="Content\themes\custom\icons\64\41.png" />
+    <Content Include="Content\themes\custom\icons\64\42.png" />
+    <Content Include="Content\themes\custom\icons\64\43.png" />
+    <Content Include="Content\themes\custom\icons\64\44.png" />
+    <Content Include="Content\themes\custom\icons\64\45.png" />
+    <Content Include="Content\themes\custom\icons\64\46.png" />
+    <Content Include="Content\themes\custom\icons\64\47.png" />
+    <Content Include="Content\themes\custom\icons\64\48.png" />
+    <Content Include="Content\themes\custom\icons\64\49.png" />
+    <Content Include="Content\themes\custom\icons\64\5.png" />
+    <Content Include="Content\themes\custom\icons\64\50.png" />
+    <Content Include="Content\themes\custom\icons\64\51.png" />
+    <Content Include="Content\themes\custom\icons\64\52.png" />
+    <Content Include="Content\themes\custom\icons\64\53.png" />
+    <Content Include="Content\themes\custom\icons\64\54.png" />
+    <Content Include="Content\themes\custom\icons\64\55.png" />
+    <Content Include="Content\themes\custom\icons\64\56.png" />
+    <Content Include="Content\themes\custom\icons\64\57.png" />
+    <Content Include="Content\themes\custom\icons\64\58.png" />
+    <Content Include="Content\themes\custom\icons\64\59.png" />
+    <Content Include="Content\themes\custom\icons\64\6.png" />
+    <Content Include="Content\themes\custom\icons\64\60.png" />
+    <Content Include="Content\themes\custom\icons\64\61.png" />
+    <Content Include="Content\themes\custom\icons\64\62.png" />
+    <Content Include="Content\themes\custom\icons\64\63.png" />
+    <Content Include="Content\themes\custom\icons\64\64.png" />
+    <Content Include="Content\themes\custom\icons\64\65.png" />
+    <Content Include="Content\themes\custom\icons\64\66.png" />
+    <Content Include="Content\themes\custom\icons\64\67.png" />
+    <Content Include="Content\themes\custom\icons\64\68.png" />
+    <Content Include="Content\themes\custom\icons\64\69.png" />
+    <Content Include="Content\themes\custom\icons\64\7.png" />
+    <Content Include="Content\themes\custom\icons\64\70.png" />
+    <Content Include="Content\themes\custom\icons\64\71.png" />
+    <Content Include="Content\themes\custom\icons\64\72.png" />
+    <Content Include="Content\themes\custom\icons\64\73.png" />
+    <Content Include="Content\themes\custom\icons\64\74.png" />
+    <Content Include="Content\themes\custom\icons\64\75.png" />
+    <Content Include="Content\themes\custom\icons\64\76.png" />
+    <Content Include="Content\themes\custom\icons\64\77.png" />
+    <Content Include="Content\themes\custom\icons\64\78.png" />
+    <Content Include="Content\themes\custom\icons\64\79.png" />
+    <Content Include="Content\themes\custom\icons\64\8.png" />
+    <Content Include="Content\themes\custom\icons\64\80.png" />
+    <Content Include="Content\themes\custom\icons\64\81.png" />
+    <Content Include="Content\themes\custom\icons\64\82.png" />
+    <Content Include="Content\themes\custom\icons\64\83.png" />
+    <Content Include="Content\themes\custom\icons\64\84.png" />
+    <Content Include="Content\themes\custom\icons\64\85.png" />
+    <Content Include="Content\themes\custom\icons\64\86.png" />
+    <Content Include="Content\themes\custom\icons\64\87.png" />
+    <Content Include="Content\themes\custom\icons\64\88.png" />
+    <Content Include="Content\themes\custom\icons\64\89.png" />
+    <Content Include="Content\themes\custom\icons\64\9.png" />
+    <Content Include="Content\themes\custom\icons\64\90.png" />
+    <Content Include="Content\themes\custom\icons\64\91.png" />
+    <Content Include="Content\themes\custom\icons\64\92.png" />
+    <Content Include="Content\themes\custom\icons\64\93.png" />
+    <Content Include="Content\themes\custom\icons\64\94.png" />
+    <Content Include="Content\themes\custom\icons\64\95.png" />
+    <Content Include="Content\themes\custom\icons\64\96.png" />
+    <Content Include="Content\themes\custom\icons\64\97.png" />
+    <Content Include="Content\themes\custom\icons\64\98.png" />
+    <Content Include="Content\themes\custom\icons\64\99.png" />
+    <Content Include="Content\themes\custom\milk.css" />
+    <Content Include="Content\themes\custom\images\bg1.png" />
+    <Content Include="Content\themes\custom\images\bg2.png" />
+    <Content Include="Content\themes\custom\images\logo.gif" />
+    <Content Include="Content\themes\custom\images\next.gif" />
+    <Content Include="Content\themes\custom\images\prev.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="Scripts\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="Scripts\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="Scripts\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="Scripts\highcharts\graphics\skies.jpg" />
+    <Content Include="Scripts\highcharts\graphics\snow.png" />
+    <Content Include="Scripts\highcharts\graphics\sun.png" />
+    <Content Include="Scripts\highcharts\highcharts.js" />
+    <Content Include="Scripts\highcharts\highcharts.src.js" />
+    <Content Include="Scripts\highcharts\modules\exporting.js" />
+    <Content Include="Scripts\highcharts\modules\exporting.src.js" />
+    <Content Include="Scripts\highcharts\themes\dark-blue.js" />
+    <Content Include="Scripts\highcharts\themes\dark-green.js" />
+    <Content Include="Scripts\highcharts\themes\gray.js" />
+    <Content Include="Scripts\highcharts\themes\grid.js" />
+    <Content Include="Scripts\highslide\graphics\close.png" />
+    <Content Include="Scripts\highslide\graphics\closeX.png" />
+    <Content Include="Scripts\highslide\graphics\controlbar-black-border.gif" />
+    <Content Include="Scripts\highslide\graphics\controlbar-text-buttons.png" />
+    <Content Include="Scripts\highslide\graphics\controlbar-white-small.gif" />
+    <Content Include="Scripts\highslide\graphics\controlbar-white.gif" />
+    <Content Include="Scripts\highslide\graphics\controlbar2.gif" />
+    <Content Include="Scripts\highslide\graphics\controlbar3.gif" />
+    <Content Include="Scripts\highslide\graphics\controlbar4-hover.gif" />
+    <Content Include="Scripts\highslide\graphics\controlbar4.gif" />
+    <Content Include="Scripts\highslide\graphics\fullexpand.gif" />
+    <Content Include="Scripts\highslide\graphics\geckodimmer.png" />
+    <Content Include="Scripts\highslide\graphics\icon.gif" />
+    <Content Include="Scripts\highslide\graphics\loader.gif" />
+    <Content Include="Scripts\highslide\graphics\loader.white.gif" />
+    <Content Include="Scripts\highslide\graphics\outlines\beveled.png" />
+    <Content Include="Scripts\highslide\graphics\outlines\drop-shadow.png" />
+    <Content Include="Scripts\highslide\graphics\outlines\glossy-dark.png" />
+    <Content Include="Scripts\highslide\graphics\outlines\outer-glow.png" />
+    <Content Include="Scripts\highslide\graphics\outlines\rounded-black.png" />
+    <Content Include="Scripts\highslide\graphics\outlines\rounded-white.png" />
+    <Content Include="Scripts\highslide\graphics\resize.gif" />
+    <Content Include="Scripts\highslide\graphics\scrollarrows.png" />
+    <Content Include="Scripts\highslide\graphics\zoomin.cur" />
+    <Content Include="Scripts\highslide\graphics\zoomout.cur" />
+    <Content Include="Scripts\highslide\highslide-full.js" />
+    <Content Include="Scripts\highslide\highslide-full.min.js" />
+    <Content Include="Scripts\highslide\highslide-full.packed.js" />
+    <Content Include="Scripts\highslide\highslide-ie6.css" />
+    <Content Include="Scripts\highslide\highslide-with-gallery.js" />
+    <Content Include="Scripts\highslide\highslide-with-gallery.min.js" />
+    <Content Include="Scripts\highslide\highslide-with-gallery.packed.js" />
+    <Content Include="Scripts\highslide\highslide-with-html.js" />
+    <Content Include="Scripts\highslide\highslide-with-html.min.js" />
+    <Content Include="Scripts\highslide\highslide-with-html.packed.js" />
+    <Content Include="Scripts\highslide\highslide.css" />
+    <Content Include="Scripts\highslide\highslide.js" />
+    <Content Include="Scripts\highslide\highslide.min.js" />
+    <Content Include="Scripts\highslide\highslide.packed.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
+    <Content Include="Scripts\jQuery.tmpl.js" />
+    <Content Include="Scripts\jQuery.tmpl.min.js" />
+    <Content Include="Scripts\jquery.tools.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jscal\css\border-radius.css" />
+    <Content Include="Scripts\jscal\css\gold\brushed-steel.jpg" />
+    <Content Include="Scripts\jscal\css\gold\coolbg.png" />
+    <Content Include="Scripts\jscal\css\gold\gold.css" />
+    <Content Include="Scripts\jscal\css\gold\gold.jpg" />
+    <Content Include="Scripts\jscal\css\img\cool-bg-hard-inv.png" />
+    <Content Include="Scripts\jscal\css\img\cool-bg-hard.png" />
+    <Content Include="Scripts\jscal\css\img\cool-bg-inv.png" />
+    <Content Include="Scripts\jscal\css\img\cool-bg.png" />
+    <Content Include="Scripts\jscal\css\img\drop-down.gif" />
+    <Content Include="Scripts\jscal\css\img\drop-up.gif" />
+    <Content Include="Scripts\jscal\css\img\nav-left-x2.gif" />
+    <Content Include="Scripts\jscal\css\img\nav-left.gif" />
+    <Content Include="Scripts\jscal\css\img\nav-right-x2.gif" />
+    <Content Include="Scripts\jscal\css\img\nav-right.gif" />
+    <Content Include="Scripts\jscal\css\img\time-down.png" />
+    <Content Include="Scripts\jscal\css\img\time-up.png" />
+    <Content Include="Scripts\jscal\css\jscal2.css" />
+    <Content Include="Scripts\jscal\css\matrix\matrix.css" />
+    <Content Include="Scripts\jscal\css\matrix\nav-left-x2.gif" />
+    <Content Include="Scripts\jscal\css\matrix\nav-left.gif" />
+    <Content Include="Scripts\jscal\css\matrix\nav-right-x2.gif" />
+    <Content Include="Scripts\jscal\css\matrix\nav-right.gif" />
+    <Content Include="Scripts\jscal\css\reduce-spacing.css" />
+    <Content Include="Scripts\jscal\css\shadow-b.png" />
+    <Content Include="Scripts\jscal\css\steel\brushed-steel.jpg" />
+    <Content Include="Scripts\jscal\css\steel\brushed-steel.png" />
+    <Content Include="Scripts\jscal\css\steel\coolbg.png" />
+    <Content Include="Scripts\jscal\css\steel\steel.css" />
+    <Content Include="Scripts\jscal\css\steel\steel.jpg" />
+    <Content Include="Scripts\jscal\css\win2k\win2k.css" />
+    <Content Include="Scripts\jscal\js\jscal2.js" />
+    <Content Include="Scripts\jscal\js\lang\ca.js" />
+    <Content Include="Scripts\jscal\js\lang\cn.js" />
+    <Content Include="Scripts\jscal\js\lang\cz.js" />
+    <Content Include="Scripts\jscal\js\lang\de.js" />
+    <Content Include="Scripts\jscal\js\lang\en.js" />
+    <Content Include="Scripts\jscal\js\lang\es.js" />
+    <Content Include="Scripts\jscal\js\lang\fr.js" />
+    <Content Include="Scripts\jscal\js\lang\hr.js" />
+    <Content Include="Scripts\jscal\js\lang\it.js" />
+    <Content Include="Scripts\jscal\js\lang\jp.js" />
+    <Content Include="Scripts\jscal\js\lang\nl.js" />
+    <Content Include="Scripts\jscal\js\lang\pl.js" />
+    <Content Include="Scripts\jscal\js\lang\pt.js" />
+    <Content Include="Scripts\jscal\js\lang\ro.js" />
+    <Content Include="Scripts\jscal\js\lang\ru.js" />
+    <Content Include="Scripts\jscal\js\lang\sk.js" />
+    <Content Include="Scripts\jscal\js\lang\sv.js" />
+    <Content Include="Scripts\jscal\js\unicode-letter.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\scrummolder\ego.scrummolder.web.bug.js" />
+    <Content Include="Scripts\scrummolder\ego.scrummolder.web.dailyscrum.js" />
+    <Content Include="Scripts\scrummolder\ego.scrummolder.web.js" />
+    <Content Include="Scripts\stepper\ui.core.js" />
+    <Content Include="Scripts\stepper\ui.stepper.css" />
+    <Content Include="Scripts\stepper\ui.stepper.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="packages.config" />
+    <None Include="Content\themes\custom\icons\48\Thumbs.db" />
+    <None Include="Content\themes\custom\icons\64\Thumbs.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="readme.txt" />
+    <Content Include="Views\Home\DailyScrum.cshtml" />
+    <Content Include="Views\Home\DailyProjectScrum.cshtml" />
+    <Content Include="Views\Report\Report.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TimeStepper.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Bug\Index.cshtml" />
+    <Content Include="Views\Shared\_BugList.cshtml" />
+    <Content Include="Views\Shared\EditBugPartial.cshtml" />
+    <None Include="Scripts\highslide\graphics\outlines\Outlines.psd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Home\DisplayTemplates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\eGo.ScrumMolder.Bl\eGo.ScrumMolder.Bl.csproj">
+      <Project>{59D9166A-7ECC-4E11-B033-AA380A3EFF57}</Project>
+      <Name>eGo.ScrumMolder.Bl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eGo.ScrumMolder.Data\eGo.ScrumMolder.Data.csproj">
+      <Project>{1B086021-3BF9-41D0-AF13-C62A0F2B0E11}</Project>
+      <Name>eGo.ScrumMolder.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eGo.ScrumMolder.Dto\eGo.ScrumMolder.Dto.csproj">
+      <Project>{D318CD72-134C-41D9-A4AA-1187DF69A148}</Project>
+      <Name>eGo.ScrumMolder.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>5234</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/eGo.ScrumMolder.Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

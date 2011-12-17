@@ -1,0 +1,407 @@
+﻿/*************************/
+/**** eGo ScrumMolder ****/
+/*************************/
+/* MISC  
+----------------------------------------------------------*/
+
+.big {
+    font-size: 40px;
+    height: 50px;
+    float: left;
+	padding-top: 10px;
+}
+
+.clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+.dotted-line {
+    height: 0px;
+    border-top: rgb(150, 150, 150) dashed 1px;
+}
+
+.left {
+    float: left;
+    height: 100%;
+    vertical-align: middle;
+    /*padding: 10px 20px 10px 20px;*/
+    margin-right: 20px;
+}
+
+.right {
+    float: right;
+}
+
+.buttons-wrapper
+{
+  	right: 50%;
+  	position: absolute;
+}
+
+.buttons 
+{
+  	left: 50%;
+  	position: relative;
+}
+
+.add 
+{
+    background-image: url("icons/48/112.png");
+    background-repeat: no-repeat;
+}
+
+.delete
+{
+    background-image: url("icons/48/118.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+a.delete
+{
+    float: left;
+    display: block;
+    width: 100px;
+    padding: 40px 5px 5px 5px;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.add 
+{
+    float: left;
+    display: block;
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+}
+
+input.submit {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin: 10px;
+}
+
+.editor-label 
+{
+	font-weight: bold;
+	font-size: large;
+	float: left;
+	margin: 10px 20px 10px 20px;
+	width: 50px;
+}
+
+.editor-field {
+	float: left;
+	margin: 10px 20px 10px 20px;
+}
+
+.editor-field input {
+	width: 200px;
+	border: rgb(150, 150, 150) solid thin;
+	font-size: xx-large;
+	/*margin: 20px;*/
+}
+
+.editor-field select {
+	width: 200px;
+	height: 30px;
+	border: rgb(150, 150, 150) solid thin;
+}
+
+.editor-field select.input-validation-error {
+	border: red solid thin;
+}
+
+/* LOGIN  
+----------------------------------------------------------*/
+
+.login .editor-label 
+{
+	font-weight: bold;
+	font-size: medium;
+	float: left;
+	margin: 10px 10px 10px 10px;
+	width: 80px;
+}
+
+.login .editor-field {
+	float: left;
+	margin: 10px 20px 10px 20px;
+}
+
+.login .editor-field input {
+	width: 200px;
+	border: rgb(150, 150, 150) solid thin;
+	font-size: medium;
+}
+
+.login .remember-me {
+	margin-left: 120px;
+}
+
+.login .submit-button {
+	margin-left: 280px;
+}
+
+/* REGISTER  
+----------------------------------------------------------*/
+
+.register .editor-label 
+{
+	font-weight: bold;
+	font-size: medium;
+	float: left;
+	margin: 10px 10px 10px 10px;
+	width: 150px;
+}
+
+.register .editor-field {
+	float: left;
+	margin: 10px 20px 10px 20px;
+}
+
+.register .editor-field input {
+	width: 200px;
+	border: rgb(150, 150, 150) solid thin;
+	font-size: medium;
+}
+
+.register .submit-button {
+	margin-left: 300px;
+}
+
+
+input.spent-time {
+	width: 55px;
+    height: 100px;
+	border: rgb(150, 150, 150) solid thin;
+    font-size: 40px;
+}
+
+input.input-validation-error {
+	border: red solid thin;
+}
+
+textarea {
+	width: 200px;
+	border: rgb(150, 150, 150) solid thin;
+}
+
+/* BUG  
+----------------------------------------------------------*/
+
+.bug .editor-label 
+{
+	font-weight: bold;
+	font-size: small;
+	float: left;
+	margin: 10px 10px 10px 10px;
+	width: 130px;
+}
+
+.bug .editor-field {
+	float: left;
+	margin: 10px 20px 10px 20px;
+}
+
+.bug .editor-field input {
+	width: 00px;
+	border: rgb(150, 150, 150) solid thin;
+	font-size: medium;
+}
+
+.bug .editor-field input[type="text"] {
+	width: 400px;
+	border: rgb(150, 150, 150) solid thin;
+	font-size: medium;
+}
+
+
+/* VALIDATION  
+----------------------------------------------------------*/
+
+.field-validation-error
+{
+    clear: both;
+    position: absolute;
+}
+
+.success 
+{
+    width: 100%;
+    text-align: center;
+    color: green;
+    font-size: larger;
+}
+
+
+/* BLOCK UI  
+----------------------------------------------------------*/
+
+div.preloader h1, div.preloader h2 {
+	color: white; padding: 5px 5px 5px 75px; text-align: left
+}
+
+div.preloader {
+	display: none;
+}
+
+/* jQuery tools calendar
+----------------------------------------------------------*/
+
+/* For the details, see: http://flowplayer.org/tools/dateinput/index.html#skinning */
+
+/* the input field */
+.date {
+	border:1px solid #ccc;
+	font-size:18px;
+	padding:4px;
+	text-align:center;
+	width:194px;
+	
+	-moz-box-shadow:0 0 10px #eee inset;
+	-webkit-box-shadow:0 0 10px #eee inset;
+}
+
+/* calendar root element */
+#calroot {
+	/* place on top of other elements. set a higher value if nessessary */
+	z-index:10000;
+	
+	margin-top:-1px;
+	width:198px;
+	padding:2px;
+	background-color:#fff;
+	font-size:11px;
+	border:1px solid #ccc;
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	
+	-moz-box-shadow: 0 0 15px #666;
+	-webkit-box-shadow: 0 0 15px #666;	
+}
+
+/* head. contains title, prev/next month controls and possible month/year selectors */
+#calhead {	
+	padding:2px 0;
+	height:22px;
+} 
+
+#caltitle {
+	font-size:14px;
+	color:#0150D1;	
+	float:left;
+	text-align:center;
+	width:155px;
+	line-height:20px;
+	text-shadow:0 1px 0 #ddd;
+}
+
+#calnext, #calprev {
+	display:block;
+	width:20px;
+	height:20px;
+	background:transparent url(images/prev.gif) no-repeat scroll center center;
+	float:left;
+	cursor:pointer;
+}
+
+#calnext {
+	background-image:url(images/next.gif);
+	float:right;
+}
+
+#calprev.caldisabled, #calnext.caldisabled {
+	visibility:hidden;	
+}
+
+/* year/month selector */
+#caltitle select {
+	font-size:10px;	
+}
+
+/* names of the days */
+#caldays {
+	height:14px;
+	border-bottom:1px solid #ddd;
+}
+
+#caldays span {
+	display:block;
+	float:left;
+	width:28px;
+	text-align:center;
+}
+
+/* container for weeks */
+#calweeks {
+	background-color:#fff;
+	margin-top:4px;
+}
+
+/* single week */
+.calweek {
+	clear:left;
+	height:22px;
+}
+
+/* single day */
+.calweek a {
+	display:block;
+	float:left;
+	width:27px;
+	height:20px;
+	text-decoration:none;
+	font-size:11px;
+	margin-left:1px;
+	text-align:center;
+	line-height:20px;
+	color:#666;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px; 		
+} 
+
+/* different states */
+.calweek a:hover, .calfocus {
+	background-color:#ddd;
+}
+
+/* sunday */
+a.calsun {
+	color:red;		
+}
+
+/* offmonth day */
+a.caloff {
+	color:#ccc;		
+}
+
+a.caloff:hover {
+	background-color:rgb(245, 245, 250);		
+}
+
+
+/* unselecteble day */
+a.caldisabled {
+	background-color:#efefef !important;
+	color:#ccc	!important;
+	cursor:default;
+}
+
+/* current day */
+#calcurrent {
+	background-color:#498CE2;
+	color:#fff;
+}
+
+/* today */
+#caltoday {
+	background-color:#333;
+	color:#fff;
+}

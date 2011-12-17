@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daily Report</title>
+        <style type="text/css">
+            body 
+            {
+                font-size: .85em;
+                font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+	
+			Hello Eugene.
+			<br /><br />
+			@foreach(var dailyProjectScrum in Model.DailyProjectScrums)
+			{
+                <div>
+				    <h3>Client: @dailyProjectScrum.ClientName<br />
+				    Project: @dailyProjectScrum.ProjectName</h3>
+                
+				    <strong><i>What I did yesterday:</i></strong><br />
+				    @dailyProjectScrum.WhatDoneLastTime<br />
+				    <strong><i>Spent time:</i></strong> @(dailyProjectScrum.SpentTime.Hours)h @(dailyProjectScrum.SpentTime.Minutes)m<br /><br />
+				
+				    <strong><i>What are the impediments on my way:</i></strong><br />
+				    @dailyProjectScrum.WhatProblems<br /><br />
+
+				    <strong><i>What I will do today:</i></strong><br />
+				    @dailyProjectScrum.WhatToDoNext
+                </div>
+                
+                @if (Model.DailyProjectScrums.Count > 1)
+                {
+                    <br />
+                    <hr />
+                }               
+			}
+			<br /><br />
+			Thanks.
+    </body>
+</html>

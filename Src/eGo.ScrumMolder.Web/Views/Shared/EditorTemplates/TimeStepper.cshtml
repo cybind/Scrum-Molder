@@ -1,0 +1,11 @@
+﻿@using eGo.ScrumMolder.Web.Models
+@model TimeStepper
+
+<span class="ns_1 ui-stepper">
+    @Html.TextBoxFor(model => model.Hours, new { @class = "spent-time hours ui-stepper-textbox", size = "3", maxlength = "3", name = "ns_textbox_1", autocomplete = "off" })
+</span><div class="big">:</div>
+<span class="ns_2 ui-stepper">
+    @Html.TextBoxFor(model => model.Minutes, new { @class = "spent-time minutes ui-stepper-textbox", size = "3", maxlength = "3", name = "ns_textbox_2", autocomplete = "off" })
+</span>
+@Html.ValidationMessageFor(model => model.Hours)
+@Html.ValidationMessageFor(model => model.Minutes)

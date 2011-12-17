@@ -1,0 +1,105 @@
+﻿@using System.ComponentModel
+@using eGo.ScrumMolder.Web.Models
+@model EditBugModel
+
+<div id="bugPopup">
+
+    @using (Ajax.BeginForm("SaveBug", "Bug", new AjaxOptions()))
+    {
+        <div class="bug">
+            <div class="left">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Bug.Category)
+                </div>
+            
+                <div class="editor-field">
+                   @Html.DropDownListFor(m => m.Bug.Category.Id, Model.Categories, " -- select category -- ", new { })
+                </div>
+            </div>
+        
+            <div class="clear"></div>
+        
+            <div class="left">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Bug.Name)
+                </div>
+            
+                <div class="editor-field">
+                    @Html.TextBoxFor(m => m.Bug.Name)
+                </div>
+            </div>
+        
+            <div class="clear"></div>
+            
+            <div class="left">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Bug.Description)
+                </div>
+                <div class="clear"></div>
+                <div class="editor-field">
+                   @Html.EditorFor(m => m.Bug.Description)
+                </div>
+            </div>
+
+            <div class="clear"></div>
+            
+            <div class="left">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Bug.AssignedTo)
+                </div>
+            
+                <div class="editor-field">
+                   @Html.DropDownListFor(m => m.Bug.AssignedToId, Model.Users, " -- select user -- ", new { })
+                </div>
+            </div>
+
+            <div class="left">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Bug.Priority)
+                </div>
+            
+                <div class="editor-field">
+                   @Html.DropDownListFor(m => m.Bug.Priority, Model.Priorities, " -- select priority -- ", new { })
+                </div>
+            </div>
+        
+            <div class="left">
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Bug.State)
+                </div>
+            
+                <div class="editor-field">
+                   @Html.DropDownListFor(m => m.Bug.State, Model.States, " -- select state -- ", new { })
+                </div>
+            </div>
+
+            <div class="left">        
+                <div class="editor-label">
+                    @Html.LabelFor(m => m.Bug.Reason)
+                </div>
+            
+                <div class="editor-field">
+                   @Html.DropDownListFor(m => m.Bug.Reason, Model.Reasons, " -- select reason -- ", new { })
+                </div>
+            </div>
+
+            @Html.HiddenFor(m=>m.Bug.Project.Id)
+            @Html.HiddenFor(m=>m.Bug.Id)
+            @Html.HiddenFor(m=>m.Bug.CreateDate)
+            @Html.HiddenFor(m=>m.Bug.CreatedById)
+
+            <div class="clear"></div>
+        
+            <div class="editor-field">
+                <div class="buttons-wrapper">
+                    <div class="buttons">
+                        <a class="button green" href="#" id="saveBug" title="Save Bug"><span>Save</span></a>
+                    </div>
+                </div>
+            </div> 
+
+        </div>
+    }
+    
+    
+</div>

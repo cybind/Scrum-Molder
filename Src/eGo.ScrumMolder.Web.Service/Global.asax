@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="eGo.ScrumMolder.Web.Service.Global" Language="C#" %>

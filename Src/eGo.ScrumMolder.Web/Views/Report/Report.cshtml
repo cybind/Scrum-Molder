@@ -1,0 +1,184 @@
+﻿@using eGo.ScrumMolder.Web.Models
+@model EffortReport
+
+@{
+    ViewBag.Title = "Effort Report";
+}
+
+@section HeaderContent{
+
+<script src="@Url.Content("~/Scripts/jquery.tools.min.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Scripts/highcharts/highcharts.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/highcharts/modules/exporting.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    var chart;
+    $(document).ready(function () {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                defaultSeriesType: 'column'
+            },
+            title: {
+                text: 'Connect Web bug chart by modules'
+            },
+            xAxis: {
+                categories: ['Activities', 'Family Chat', 'Messages', 'Memories', 'Contacts', 'Settings']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total bug count'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: -100,
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.x + '</b><br/>' +
+								 this.series.name + ': ' + this.y + '<br/>' +
+								 'Total: ' + this.point.stackTotal;
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                    }
+                }
+            },
+            series: [{
+                name: 'Major',
+                data: [5, 3, 4, 7, 2]
+            }, {
+                name: 'Critical',
+                data: [2, 2, 3, 2, 1]
+            }, {
+                name: 'Minor',
+                data: [3, 4, 4, 2, 5]
+            }]
+        });
+
+        chart2 = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container2',
+                defaultSeriesType: 'spline'
+            },
+            title: {
+                text: 'Monthly Time Worked'
+            },
+            subtitle: {
+                text: 'Source: Test data'
+            },
+            xAxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+							'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            },
+            yAxis: {
+                title: {
+                    text: 'Worked Time'
+                },
+                labels: {
+                    formatter: function () {
+                        return this.value + 'h'
+                    }
+                }
+            },
+            tooltip: {
+                crosshairs: true,
+                shared: true
+            },
+            plotOptions: {
+                spline: {
+                    marker: {
+                        radius: 4,
+                        lineColor: '#666666',
+                        lineWidth: 1
+                    }
+                }
+            },
+            series: [{
+                name: 'Andrew',
+                marker: {
+                    symbol: 'square'
+                },
+                data: [168, 170, 150, 194, 177.2, 125, 195, {
+                    y: 100,
+                    marker: {
+                        symbol: 'url(/Scripts/highcharts/graphics/sun.png)'
+                    }
+                }, 172, 150, 160, 140]
+
+            }, {
+                name: 'Peter',
+                marker: {
+                    symbol: 'diamond'
+                },
+                data: [{
+                    y: 164,
+                    marker: {
+                        symbol: 'url(/Scripts/highcharts/graphics/snow.png)'
+                    }
+                }, 150, 140, 174, 119, 138, 185, 170, 158, 184, 190, 145]
+            }]
+        });
+        
+    });
+				
+	</script>
+
+}
+
+<h2>Effort Report</h2>
+
+@{ Html.EnableClientValidation(); }    
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "There are errors in the form. Please fix them and re-submit the form.")
+
+    <div class="left">@Html.LabelFor(m => m.StartDate): @Html.EditorFor(m => m.StartDate)</div>
+    
+    <div class="left">@Html.LabelFor(m => m.StartDate): @Html.EditorFor(m => m.EndDate)</div>
+
+    <a class="button green" href="javascript:document.forms[0].submit();" title="Download"><span>Download</span></a>
+    
+}
+
+<br /><br/><br/>
+<div class="clear"></div>
+
+<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+
+<br /><br/>
+
+<div id="container2" style="width: 800px; height: 400px; margin: 0 auto"></div>
+
+
+<script type="text/javascript">
+    $("#StartDate,#EndDate").dateinput({
+        format: 'm/d/yyyy',
+        selectors: true,             
+        speed: 'fast',               
+        firstDay: 1                  
+    });
+</script>

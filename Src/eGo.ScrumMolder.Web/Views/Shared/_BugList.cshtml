@@ -1,0 +1,86 @@
+﻿@using eGo.ScrumMolder.Web.Models
+@model List<Bug>
+@if (Model.Count > 0)
+{
+
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Id
+                </td>
+                <td>
+                    ImportedBugId
+                </td>
+                <td>
+                    Name
+                </td>
+                <td>
+                    Priority
+                </td>
+                <td>
+                    Reason
+                </td>
+                <td>
+                    State
+                </td>
+                <td>
+                    Description
+                </td>
+                <td>
+                    Category
+                </td>
+                <td>
+                    CreatedBy
+                </td>
+                <td>
+                    AssignedTo
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bug in Model)
+            {
+                <tr>
+                    <td>@bug.Id
+                    </td>
+                    <td>@bug.ImportedBugId
+                    </td>
+                    <td>@bug.Name
+                    </td>
+                    <td>@bug.Priority
+                    </td>
+                    <td>@bug.Reason
+                    </td>
+                    <td>@bug.State
+                    </td>
+                    <td>@bug.Description
+                    </td>
+                    <td>
+                        @if (bug.Category != null)
+                        {
+                            @bug.Category.Name
+                        }
+                    </td>
+                    <td>@bug.CreatedBy.UserName
+                    </td>
+                    <td>
+                        @if (bug.AssignedTo != null)
+                        {
+                            @bug.AssignedTo.UserName
+                        }
+                    </td>
+                    <td>
+                        <a class="edit-bug" href="@Url.Action("EditBug", "Bug")">Edit<input type="hidden" class="bug-id" value="@bug.Id"/></a>
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div>
+        No bugs for this project.</div>
+}
